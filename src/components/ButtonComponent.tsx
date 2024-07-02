@@ -4,11 +4,12 @@ import style from "./ButtonComponent.module.css";
 
 interface Props {
   children: string;
+  colorName: string;
 }
-const ButtonComponent = ({ children }: Props) => {
+const ButtonComponent = ({ children, colorName = "danger" }: Props) => {
   const [visibility, setVisibility] = useState(false);
   return (
-    <div className={[style.container, style.btn].join(" ")}>
+    <div className={[style.container, style["btn-" + colorName]].join(" ")}>
       {visibility && <Alert onClose={() => setVisibility(false)}></Alert>}
       <button
         type="button"
