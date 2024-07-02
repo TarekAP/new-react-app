@@ -21,7 +21,7 @@ const State = ({ children, onClick }: props) => {
   });
   const handleClick = () => {
     onClick();
-    setGame({ ...game, playerName: [...game.playerName, "islam"] });
+    //setGame({ ...game, player:game.player.map(plr=>{plr.id===1?{...plr,quntity:2}:plr.quantity})} );
   };
   return <button onClick={handleClick}>{children}</button>;
 };
